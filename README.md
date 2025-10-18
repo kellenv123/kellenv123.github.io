@@ -4,7 +4,7 @@ A simple, multi-page responsive website showcasing native Hawaiian bird species 
 ## Table of Contents
 - [Features](#features)
 - [Folder Structure](#folder-structure)
-- [How to Use](#how-to-use)
+- [About](#about.html)
 - [Technologies Used](#technologies-used)
 - [To Do](#to-do)
 - [License](#license)
