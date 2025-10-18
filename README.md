@@ -20,6 +20,7 @@ hawaiian-birds/
 ├── index.html
 ├── about.html
 ├── gallery.html
+├── contact.html
 ├── bird-details/
 │ ├── iiwi.html
 │ ├── amakihi.html
