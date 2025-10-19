@@ -25,7 +25,7 @@ hawaiian-birds/
 │ ├── iiwi.html
 │ ├── amakihi.html
 ├── css/
-│ └── style.css
+│ └── styles.css
 ├── images/
 │ └── (bird photos)
 └── README.md
