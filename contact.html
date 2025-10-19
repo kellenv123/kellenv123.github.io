@@ -12,11 +12,10 @@
   <!-- Navigation -->
   <nav>
     <ul class="nav">
-      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <link rel="stylesheet" href="css/style.css" />
+      <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
   </nav>
 
@@ -29,20 +28,20 @@
 
     <section class="contact-content">
       <div class="contact-info">
-        <h2>📧 Contact Info</h2>
+        <h2><span aria-hidden="true">📧</span> Contact Info</h2>
         <p>Email: <a href="mailto:photographer@example.com">photographer@example.com</a></p>
         <p>Instagram: <a href="https://instagram.com/yourusername" target="_blank">@yourusername</a></p>
         <p>Location: Hilo, Hawaii</p>
       </div>
 
       <div class="contact-form">
-        <h2>✉️ Send a Message</h2>
+        <h2><span aria-hidden="true">✉️</span> Send a Message</h2>
         <form action="#" method="POST">
           <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required />
+          <input type="text" id="name" name="name" required>
 
           <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
+          <input type="email" id="email" name="email" required>
 
           <label for="message">Message:</label>
           <textarea id="message" name="message" rows="5" required></textarea>
