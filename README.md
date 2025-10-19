@@ -15,17 +15,3 @@ A simple, multi-page responsive website showcasing native Hawaiian bird species 
 - Responsive layout for desktop, tablet, and mobile
 - Styled with custom CSS
 
-## Folder Structure
-hawaiian-birds/
-├── index.html
-├── about.html
-├── gallery.html
-├── contact.html
-├── bird-details/
-│ ├── iiwi.html
-│ ├── amakihi.html
-├── css/
-│ └── styles.css
-├── images/
-│ └── (bird photos)
-└── README.md
