@@ -1,11 +1,12 @@
-# Kellenʻs Bird Photography Website
-A simple, multi-page responsive website showcasing native Hawaiian bird species through photography and short descriptions.
+# KV Photography Website
+
 
 ## Table of Contents
 - [Features](#features)
 - [Folder Structure](#folder-structure)
 - [About](#about.html)
-- [Technologies Used](#technologies-used)
+- [About](#about.html)
+-  [About](#about.html)
 - [To Do](#to-do)
 - [License](#license)
 
