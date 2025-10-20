@@ -117,11 +117,26 @@ a:hover {
    GALLERY GRID
    ========================== */
 
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+figure {
+  margin: 0;
+  text-align: center;
+}
+figcaption {
+  margin-top: 8px;
+  font-weight: bold;
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
 }
 
 .gallery-grid figure {
@@ -139,11 +154,10 @@ a:hover {
   box-shadow: 0 8px 15px rgba(0,0,0,0.15);
 }
 
-.gallery-grid img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-bottom: 1px solid #ddd;
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 
 .gallery-grid figcaption {
