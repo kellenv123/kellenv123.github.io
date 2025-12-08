@@ -118,8 +118,8 @@ a:hover {
   margin: 40px auto;       /* space above and below, center horizontally */
   padding: 20px;            /* space inside the container */
   max-width: 500px;         /* limits width on large screens */
-  background-color: #f0f8ff; /* light blue-ish background */
-  border: 2px solid #c0e0ff; /* subtle border */
+  background-color: #e0e0e0; /* light gray background */
+  border: 2px solid #b0b0b0; /* subtle border */
   border-radius: 12px;       /* rounded corners */
   text-align: center;        /* center text and audio player */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* soft shadow for depth */
