@@ -111,6 +111,19 @@ a:hover {
 }
 
 /* ==========================
+   AUDIO SECTION
+   ========================== */
+
+.audio-container {
+  margin-top: 40px; /* Space above the audio section */
+  text-align: center; /* Center the audio player */
+}
+
+.audio-container h2 {
+  margin-bottom: 10px;
+}
+
+/* ==========================
    INTRO SECTION
    ========================== */
 
