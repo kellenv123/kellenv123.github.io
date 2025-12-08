@@ -133,7 +133,7 @@ a:hover {
 
 .audio-info {
    text-align:center;
-   padding: 4rem 2rem;
+   max-width: 800px;
 
 }
 
