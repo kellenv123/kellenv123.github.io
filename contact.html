@@ -79,35 +79,44 @@
   </footer>
 
  
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
-  // Initialize EmailJS with your public key
-  (function() {
-    emailjs.init("WwaF6iKWSRhFZntFh");
-  })();
+  // Initialize EmailJS
+  emailjs.init("WwaF6iKWSRhFZntFh");
 
-  // Handle the form submission
-  document.getElementById("contactForm").addEventListener("submit", function(e) {
+  const form = document.getElementById("contactForm");
+  const spinner = document.getElementById("spinner");
+  const popup = document.getElementById("popup");
+  const popupClose = document.getElementById("popupClose");
+
+  form.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    const status = document.getElementById("formStatus");
-    status.textContent = "Sending...";
-    status.style.color = "#555";
+    spinner.style.display = "block"; // show spinner
 
     emailjs.sendForm("service_y6skl9n", "template_ttxybjc", this)
       .then(() => {
-          status.textContent = "Message sent successfully!";
-          status.style.color = "green";
-          this.reset();
+        spinner.style.display = "none"; // hide spinner
+        popup.style.display = "flex";   // show popup
+        form.reset();
       })
       .catch((error) => {
-          console.error("EmailJS error:", error);
-          status.textContent = "Error sending message. Please try again.";
-          status.style.color = "red";
+        spinner.style.display = "none";
+        alert("Error sending message. Please try again.");
+        console.error("EmailJS error:", error);
       });
+  });
+
+  // Close popup
+  popupClose.addEventListener("click", () => {
+    popup.style.display = "none";
+  });
+
+  // Optional: close popup if user clicks outside the content
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) popup.style.display = "none";
   });
 </script>
 </body>
