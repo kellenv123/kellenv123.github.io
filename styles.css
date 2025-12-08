@@ -132,9 +132,9 @@ a:hover {
 }
 
 .audio-info {
-   text-align: center;
-   max-width: 600px;
-
+  text-align: center;       /* center text inside */
+  max-width: 600px;         /* optional, limits width */
+  margin: 0 auto;           /* center the container itself */
 }
 
 
