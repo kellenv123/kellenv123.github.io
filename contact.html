@@ -35,20 +35,20 @@
   <h2><span aria-hidden="true">✉️</span> Send a Message</h2>
 
   <form id="contactForm">
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name" required>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
 
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
 
-  <label for="message">Message:</label>
-  <textarea id="message" name="message" rows="5" required></textarea>
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
 
-  <button type="submit">Send Message</button>
-</form>
+    <button type="submit">Send Message</button>
+  </form>
 
-<p id="formStatus" class="status-message"></p>
-  </div>
+  <p id="formStatus" class="status-message"></p>
+</div>
 
 
     <section class="contact-content">
@@ -69,29 +69,35 @@
 
  
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
 <script>
-(function() {
-  emailjs.init("YOUR_PUBLIC_KEY"); // <-- Replace this
-})();
+  // Initialize EmailJS with your public key
+  (function() {
+    emailjs.init("WwaF6iKWSRhFZntFh");
+  })();
 
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+  // Handle the form submission
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-  const status = document.getElementById("formStatus");
-  status.textContent = "Sending...";
-  status.style.color = "#555";
+    const status = document.getElementById("formStatus");
+    status.textContent = "Sending...";
+    status.style.color = "#555";
 
-  emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
-    .then(() => {
-        status.textContent = "Message sent successfully!";
-        status.style.color = "green";
-        this.reset();
-    })
-    .catch(() => {
-        status.textContent = "Error sending message. Please try again.";
-        status.style.color = "red";
-    });
-});
+    emailjs.sendForm("service_y6skl9n", "template_ttxybjc", this)
+      .then(() => {
+          status.textContent = "Message sent successfully!";
+          status.style.color = "green";
+          this.reset();
+      })
+      .catch((error) => {
+          console.error("EmailJS error:", error);
+          status.textContent = "Error sending message. Please try again.";
+          status.style.color = "red";
+      });
+  });
 </script>
 </body>
 </html>
