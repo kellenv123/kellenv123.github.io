@@ -68,5 +68,38 @@
     <p>&copy; 2025 KV Photography. All rights reserved.</p>
   </footer>
 
+  <script>
+document.getElementById("contactForm").addEventListener("submit", async function (e) {
+  e.preventDefault(); // prevents page reload
+
+  const status = document.getElementById("formStatus");
+  status.textContent = "Sending...";
+  status.style.color = "#555";
+
+  const formData = new FormData(this);
+
+  try {
+    const response = await fetch("send-message.php", {
+      method: "POST",
+      body: formData
+    });
+
+    const result = await response.text();
+
+    if (response.ok) {
+      status.textContent = "Message sent successfully!";
+      status.style.color = "green";
+      this.reset();
+    } else {
+      status.textContent = "Error sending message. Please try again.";
+      status.style.color = "red";
+    }
+  } catch (error) {
+    status.textContent = "Network error. Please try again.";
+    status.style.color = "red";
+  }
+});
+</script>
+  
 </body>
 </html>
