@@ -35,20 +35,19 @@
   <h2><span aria-hidden="true">✉️</span> Send a Message</h2>
 
   <form id="contactForm">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
 
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" rows="5" required></textarea>
+  <label for="message">Message:</label>
+  <textarea id="message" name="message" rows="5" required></textarea>
 
-    <button type="submit">Send Message</button>
-  </form>
+  <button type="submit">Send Message</button>
+</form>
 
-  <!-- Status message -->
-  <p id="formStatus" class="status-message"></p>
+<p id="formStatus" class="status-message"></p>
   </div>
 
 
@@ -68,38 +67,31 @@
     <p>&copy; 2025 KV Photography. All rights reserved.</p>
   </footer>
 
-  <script>
-document.getElementById("contactForm").addEventListener("submit", async function (e) {
-  e.preventDefault(); // prevents page reload
+ 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+(function() {
+  emailjs.init("YOUR_PUBLIC_KEY"); // <-- Replace this
+})();
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
 
   const status = document.getElementById("formStatus");
   status.textContent = "Sending...";
   status.style.color = "#555";
 
-  const formData = new FormData(this);
-
-  try {
-    const response = await fetch("send-message.php", {
-      method: "POST",
-      body: formData
+  emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
+    .then(() => {
+        status.textContent = "Message sent successfully!";
+        status.style.color = "green";
+        this.reset();
+    })
+    .catch(() => {
+        status.textContent = "Error sending message. Please try again.";
+        status.style.color = "red";
     });
-
-    const result = await response.text();
-
-    if (response.ok) {
-      status.textContent = "Message sent successfully!";
-      status.style.color = "green";
-      this.reset();
-    } else {
-      status.textContent = "Error sending message. Please try again.";
-      status.style.color = "red";
-    }
-  } catch (error) {
-    status.textContent = "Network error. Please try again.";
-    status.style.color = "red";
-  }
 });
 </script>
-  
 </body>
 </html>
