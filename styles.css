@@ -328,20 +328,19 @@ Style rules for contact info area at the bottom
 }
 
 .site-footer {
-    position: fixed;        
+    position: fixed;  
+    bottom: 0;
     width: 100%;
     height: 200px;             /* Adjust to your desired footer height */
     overflow: hidden;          /* Ensure image doesn’t spill out */
+   
 }
 
 .footer-image {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;         /* Makes image fill footer without stretching */
-    z-index: -1;               /* Sends image behind footer content */
+    object-fit: cover;
+    display: block;
 }
 
 /* ==========================
