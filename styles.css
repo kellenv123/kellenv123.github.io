@@ -207,8 +207,15 @@ figcaption {
 .gallery-grid video {
   width: 100%;
   height: auto;
+  object-fit: cover;
   border-radius: 8px;
   display: block;
+  box-shadow: var(--image-shadow);    /* if used */
+  transition: transform 0.3s ease;    /* match hover */
+}
+
+.gallery-grid figure:hover video {
+  transform: scale(1.02); /* same hover grow effect as images */
 }
 
 /* ==========================
