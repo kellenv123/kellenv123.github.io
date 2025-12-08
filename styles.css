@@ -115,12 +115,20 @@ a:hover {
    ========================== */
 
 .audio-container {
-  margin-top: 40px; /* Space above the audio section */
-  text-align: center; /* Center the audio player */
+  margin: 40px auto;       /* space above and below, center horizontally */
+  padding: 20px;            /* space inside the container */
+  max-width: 500px;         /* limits width on large screens */
+  background-color: #f0f8ff; /* light blue-ish background */
+  border: 2px solid #c0e0ff; /* subtle border */
+  border-radius: 12px;       /* rounded corners */
+  text-align: center;        /* center text and audio player */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* soft shadow for depth */
 }
 
 .audio-container h2 {
-  margin-bottom: 10px;
+  margin-bottom: 15px; /* space between heading and audio player */
+  font-family: 'Arial', sans-serif;
+  color: #333;
 }
 
 /* ==========================
